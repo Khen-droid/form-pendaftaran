@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: #fff;
+}
+
+/* ===== Kerangka utama: gradient biru-ungu ke cyan ===== */
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 520px;
+  padding: 30px 0;
+  background: linear-gradient(90deg, #3a2fb0 0%, #1e6fd9 45%, #00c6ff 100%);
+}
+
+/* ===== Panel kiri ===== */
+.kiri {
+  width: 280px;
+  padding: 40px 30px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.kiri .ikon {
+  font-size: 48px;
+}
+.kiri h2 {
+  font-weight: normal;
+  margin: 15px 0;
+}
+.kiri p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== Panel kanan: putih melengkung di sisi kiri ===== */
+.kanan {
+  flex: 1;
+  background: #f8f9fb;
+  padding: 30px 50px;
+  border-radius: 50% 0 0 50% / 50% 0 0 50%;
+  border-radius: 200px 0 0 200px / 50% 0 0 50%;
+}
+.kanan h1 {
+  text-align: center;
+  font-weight: normal;
+  color: #444;
+  font-size: 26px;
+  margin: 10px 0 25px;
+}
+
+/* ===== Grid dua kolom ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 24px;
+  max-width: 640px;
+  margin: auto;
+}
+.penuh {
+  grid-column: 1 / -1;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccd2da;
+  border-radius: 4px;
+  font-size: 14px;
+  background: white;
+  color: #444;
+}
+textarea {
+  height: 70px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.pilihan {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+.pilihan span {
+  font-weight: bold;
+  color: #444;
+}
+.pilihan label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ===== Tombol pill ===== */
+button {
+  display: block;
+  margin: 20px 0 0 auto;
+  width: 150px;
+  padding: 11px;
+  border: none;
+  border-radius: 30px;
+  background: #0a66cc;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+button:hover {
+  background: #084f9e;
+}
+form {
+  max-width: 640px;
+  margin: auto;
+}
+
+/* ===== Halaman rekap (proses.php) ===== */
+.hasil {
+  background: #f8f9fb;
+  width: 480px;
+  max-width: 100%;
+  margin: auto;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+.hasil h2 {
+  text-align: center;
+  color: #0a66cc;
+  font-weight: normal;
+}
+.data {
+  display: flex;
+  padding: 11px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+.data strong {
+  width: 130px;
+}
+.data span {
+  flex: 1;
+}
+.hasil a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #0a66cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+body.rekap {
+  background: linear-gradient(90deg, #3a2fb0, #1e6fd9, #00c6ff);
+}
+
+/* ===== Responsif (HP) ===== */
+@media (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+  .kiri {
+    width: 100%;
+    padding: 25px;
+  }
+  .kanan {
+    border-radius: 25px 25px 0 0;
+    padding: 25px 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
